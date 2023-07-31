@@ -13,5 +13,9 @@ export default function Currency({ price }: CurrencyProps) {
     setIsMounted(true);
   }, []);
   if (!isMounted) return null;
-  return <div className="font-semibold">{formatter.format(Number(price))}</div>;
+  return (
+    <div className="font-semibold">
+      {formatter.format(Number(price)) + ' ریال '}
+    </div>
+  );
 }

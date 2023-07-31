@@ -7,7 +7,7 @@ export default function footer() {
   ">
       <div className="mx-auto py-10">
         <p className="text-center text-xs text-black">
-          &copy; تمامی حقوق این وبسایت مطعلق به احمد دری می باشد.{' '}
+          &copy; تمامی حقوق این وبسایت متعلق به احمد دری می باشد.{' '}
         </p>
       </div>
     </footer>

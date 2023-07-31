@@ -6,12 +6,17 @@ import React from 'react';
 import IconButton from './icon-button';
 import { Expand, ShoppingCart } from 'lucide-react';
 import Currency from './currency';
+import { useRouter } from 'next/navigation';
 
 type ProductCardProps = {
   data: Product;
 };
 
 export default function ProductCard({ data }: ProductCardProps) {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/product/${data?.id}`);
+  };
   return (
     <div className="bg-white cursor-pointer group rounded-xl border p-3 space-y-4 ">
       <div className="aspect-square rounded-xl bg-gray-100 relative ">
@@ -27,7 +32,7 @@ export default function ProductCard({ data }: ProductCardProps) {
             <IconButton
               icon={<Expand size={20} className="text-gray-600" />}
               className="bg-white"
-              onClick={() => {}}
+              onClick={() => handleClick()}
             />
             <IconButton
               icon={<ShoppingCart size={20} className="text-gray-600" />}
