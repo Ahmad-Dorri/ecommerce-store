@@ -8,6 +8,7 @@ import getProducts from '@/actions/get-products';
 import Container from '@/components/ui/container';
 import ProductList from '../../components/product-list';
 import Gallery from '@/components/gallery/gallery';
+import Info from '@/components/info';
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.productId);
@@ -26,7 +27,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <Gallery images={product.images} />
             <div className="mt-10 px-4 sm:pt-16 sm:px-0 lg:pt-0 ">
               {/* info */}
-              اطلاعات
+              <Info data={product} />
             </div>
           </div>
           <hr className="my-10" />
