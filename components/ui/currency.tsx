@@ -5,7 +5,7 @@ import { cn, formatter } from '@/lib/utils';
 
 interface CurrencyProps {
   price?: string | number;
-  className: string;
+  className?: string;
 }
 
 export default function Currency({ price, className }: CurrencyProps) {

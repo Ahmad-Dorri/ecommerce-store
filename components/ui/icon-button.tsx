@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import React, { MouseEventHandler } from 'react';
+import { MouseEventHandler } from 'react';
 
 interface IconButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;

@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import ToastProvider from '@/providers/toast-provider';
 
 const shabnam = localFont({
   src: '../public/font/Shabnam.woff2',
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html dir="rtl">
       <body className={shabnam.className}>
+        <ToastProvider />
         <Navbar />
         {children}
         <Footer />

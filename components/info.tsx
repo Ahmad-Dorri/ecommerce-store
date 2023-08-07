@@ -5,12 +5,14 @@ import { ShoppingBag } from 'lucide-react';
 import { Product } from '@/types';
 import Currency from '@/components/ui/currency';
 import { Button } from '@/components/ui/button';
+import useCartStore from '@/hooks/use-cart';
 
 interface InfoProps {
   data: Product;
 }
 
 export default function Info({ data }: InfoProps) {
+  const cart = useCartStore();
   return (
     <div>
       <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
@@ -35,7 +37,11 @@ export default function Info({ data }: InfoProps) {
         </div>
       </div>
       <div className="mt-10 flex items-center gap-3">
-        <Button className="flex items-center gap-2">
+        <Button
+          onClick={() => {
+            cart.addItem(data);
+          }}
+          className="flex items-center gap-2">
           خرید
           <ShoppingBag size={20} />
         </Button>
