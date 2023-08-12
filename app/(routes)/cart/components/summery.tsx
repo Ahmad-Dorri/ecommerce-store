@@ -23,9 +23,10 @@ export default function Summery() {
     }
   }, [searchParams, removeAll]);
 
-  const totalPrice = items
-    .map((item) => Number(item.price))
-    .reduce((acc, cur) => acc + cur);
+  const totalPrice =
+    items.length === 0
+      ? 0
+      : items.map((item) => Number(item.price)).reduce((acc, cur) => acc + cur);
 
   const onCheckout = async () => {
     const response = await axios.post(
@@ -47,7 +48,10 @@ export default function Summery() {
           <Currency price={totalPrice} />
         </div>
       </div>
-      <Button onClick={onCheckout} className="w-full mt-6">
+      <Button
+        disabled={items.length === 0}
+        onClick={onCheckout}
+        className="w-full mt-6">
         خرید
       </Button>
     </div>

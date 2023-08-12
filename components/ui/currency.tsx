@@ -16,7 +16,7 @@ export default function Currency({ price, className }: CurrencyProps) {
   if (!isMounted) return null;
   return (
     <div className={cn('font-semibold', className)}>
-      {formatter.format(Number(price)) + ' ریال '}
+      {formatter.format(Number(price))}
     </div>
   );
 }
